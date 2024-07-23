@@ -9,6 +9,8 @@ import java.util.Optional;
 public interface EquipoService {
     List<Equipo> getAllEquipos();
     Optional<Equipo> getEquipoById(Long id);
+    List<Equipo> getEquiposByPartidoId(Long partidoId);
     Equipo saveEquipo(Equipo equipo);
-    void addJugador(Long jugador, Long equipo);
+    void deleteEquipoById(Long id);
+    void addJugador(Long jugadorId, Long equipoId);
 }

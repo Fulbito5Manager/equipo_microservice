@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EquipoRepository extends JpaRepository<Equipo,Long> {
+    Long findPartidoIdById(Long id);
+
 }

@@ -14,9 +14,9 @@ public class Equipo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false)
+    @Column(name = "tipo", nullable = false)
     private String tipo;
-    @Column(nullable = false)
+    @Column(name = "partido_id",nullable = false)
     private Long partidoId;
 
     @ElementCollection

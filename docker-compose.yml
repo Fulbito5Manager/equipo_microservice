@@ -1,8 +1,23 @@
 version: '3.8'
 
 services:
+  equipo_service:
+    container_name: equipo_service
+    image: equipo_service:latest
+    build: .
+    ports:
+      - 8080:8080
+    environment:
+      EQUIPO_DATASOURCE_URL: jdbc:postgresql://postgres:5433/equipo_db
+      EQUIPO_DATASOURCE_USERNAME: equipo_db_user
+      EQUIPO_DATASOURCE_PASSWORD: equipo_db_password
+    depends_on:
+      - postgres
+
   postgres:
     image: postgres:13
+    expose:
+      - "5433"
     environment:
       POSTGRES_DB: equipo_db
       POSTGRES_USER: equipo_db_user
